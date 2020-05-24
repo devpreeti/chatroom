@@ -105,7 +105,14 @@ function connect() {
   if (document.location.protocol === "https:") {
     scheme += "s";
   }
-  serverUrl = scheme + "://" + myHostname + ":6503";
+//  serverUrl = scheme + "://" + myHostname + ":6503";
+serverUrl =`${scheme}://${window.location.origin}`;
+alert(serverUrl);
+// https://ccf2d84f.ngrok.io
+//https://900302b3.ngrok.io
+//https://nodesocketapp.herokuapp.com:15087/
+  //serverUrl = scheme + "://" + 'nodesocketapp.herokuapp.com' + ":15087";
+
 
   log(`Connecting to server: ${serverUrl}`);
   connection = new WebSocket(serverUrl, "json");
